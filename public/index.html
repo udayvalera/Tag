@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2D Tag Game</title>
     <style>
-        body { margin: 0; background-color: #222; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; color: white; font-family: sans-serif;}
-        canvas { border: 1px solid white; }
-        #ui { margin-bottom: 10px; }
-        button, input { margin: 5px; padding: 8px; }
-        #roomInfo { margin-top: 10px; font-size: 0.9em; }
-        #timer { font-size: 1.5em; margin-top: 5px; color: yellow; }
+        body {
+            margin: 0;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        canvas {
+            border: 1px solid white;
+        }
+
+        #ui {
+            margin-bottom: 10px;
+        }
+
+        button,
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+
+        #roomInfo {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            margin-top: 5px;
+            color: yellow;
+        }
     </style>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
 </head>
+
 <body>
     <div id="ui">
         <input type="text" id="roomCodeInput" placeholder="Enter Room Code">
         <button id="joinRoomBtn">Join Room</button>
         <button id="createRoomBtn">Create Room</button>
         <span id="timer">Time: --</span>
-         <button id="startGameBtn" style="display: none;">Start Game</button> </div>
-     <div id="roomInfo">
-        Room Code: <span id="roomCodeDisplay">N/A</span> | Players: <span id="playerCount">0</span> | Host: <span id="isHost">No</span>
+        <button id="startGameBtn" style="display: none;">Start Game</button>
+    </div>
+    <div id="roomInfo">
+        Room Code: <span id="roomCodeDisplay">N/A</span> | Players: <span id="playerCount">0</span> | Host: <span
+            id="isHost">No</span>
     </div>
     <div id="game-container"></div>
 
     <script src="js/game.js"></script>
 </body>
+
 </html>
